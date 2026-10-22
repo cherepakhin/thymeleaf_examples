@@ -590,7 +590,7 @@
               <artifact>thymeleaf-examples-spring5-springmail</artifact>
               <artifact>thymeleaf-examples-spring5-stsm</artifact>
               <artifact>thymeleaf-examples-spring5-thvsjsp</artifact>
-              <artifact>thymeleaf-examples-spring6</artifact>
+<!--              <artifact>thymeleaf-examples-spring6</artifact> -->
               <artifact>thymeleaf-examples-spring6-extrathyme</artifact>
               <artifact>thymeleaf-examples-spring6-sayhello</artifact>
               <artifact>thymeleaf-examples-spring6-springmail</artifact>

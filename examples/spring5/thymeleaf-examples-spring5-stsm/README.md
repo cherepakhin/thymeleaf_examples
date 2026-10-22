@@ -4,6 +4,7 @@ Templates in [src/main/webapp/WEB-INF/templates](src/main/webapp/WEB-INF/templat
 
 Spring MVC. 
 No Spring Boot.
+WAR
 
 stsm - Spring Thyme Seed Starter Manager
 
