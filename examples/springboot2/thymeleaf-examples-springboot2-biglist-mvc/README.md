@@ -1,9 +1,6 @@
-### Spring MVC, ThemLeaf and FreeMarker
+### Spring MVC, ThymeLeaf and FreeMarker
 
-# ???????? ?? ?????????.
-
-SQLite
-?? ??????? ???????? ?????? ????????????? Freemarket, ThemeLeaf ??? JSON:
+SQLite, Freemarket, ThymeLeaf, Java 21
 
 ## Themleaf
 
@@ -20,10 +17,6 @@ SQLite
 echo $JAVA_HOME
 ````
 
-````text
-/home/vasi/.sdkman/candidates/java/current
-````
-
 ````shell
 /home/vasi/.sdkman/candidates/java/current/bin/java -version
 ````
@@ -38,6 +31,8 @@ mvn spring-boot:run
 ````
 
 http://127.0.0.1:8080/
+
+From jar NOT WORKED, because DATABASE GENERATED IN PROJECT.
 
  Thymeleaf Sandbox: BigList, Spring Web MVC
 -------------------------------------------
