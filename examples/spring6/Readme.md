@@ -1,0 +1,19 @@
+spring 6 ??????-???
+
+````xml
+<dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf-spring6</artifactId>
+</dependency>
+````
+
+? Spring 6 [https://www.geeksforgeeks.org/blogs/whats-new-in-spring-6-and-spring-boot-3/](https://www.geeksforgeeks.org/blogs/whats-new-in-spring-6-and-spring-boot-3/):
+
+- 31 ??????? 2024 ???? ??????????? Open-source ????????? Spring Framework 5.3.x, 6.0.x 
+   ? Spring Boot 2.7.x. Spring ??????? ?? ?????? ??????????? OSS-??????? (OSS Open Source Support release - ????? ? ?????????? ??????????) ? ???????????? ???????? ? 
+   ? ??-?? __???????__ __??????????__ ????????? ???????? ????? __??????????__.
+- One of the most significant changes in Spring Boot 3.0 is the requirement for Java 17 as the baseline version. This means that Spring Boot 3.0 will only run on Java 17 or higher. Java 17 is the latest long-term support (LTS) version of Java, and it includes a number of new features and improvements.
+- Support for __Java 17__ language features like sealed classes switch expressions, etc. Spring code and APIs will be updated to leverage new Java 17 capabilities where applicable.
+- Support for additional reactive stream operators and features introduced in JDK 17 like reactive stream publisher combinators. Spring WebFlux and reactive components may utilize these.
+- Spring 6 is runtime compatible with Jakarta EE 9 as well as Jakarta EE 10 APIs. This means that you can use Spring 6 to develop applications that can run on Jakarta EE 9 or Jakarta EE 10 compliant runtime environments.
+- Spring 6 is compatible with the latest web servers, such as Tomcat 10.1, Jetty 11, and Undertow 2.3. This means that you can use Spring 6 to develop applications that can run on these web servers.

@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 https://maven.apache.org/xsd/assembly-2.1.0.xsd">
+
+  <id>dist</id>
+  
+  <formats>
+    <format>zip</format>
+  </formats>
+
+  <moduleSets>
+
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
+      <includes>
+        <include>org.thymeleaf:*</include>
+        <include>org.thymeleaf.extras:*</include>
+      </includes>
+      <binaries>
+        <outputDirectory>/dist</outputDirectory>
+        <unpack>false</unpack>
+        <dependencySets>
+          <dependencySet>
+            <outputDirectory>/lib</outputDirectory>
+            <scope>runtime</scope>
+            <useProjectArtifact>false</useProjectArtifact>
+            <excludes>
+              <exclude>org.thymeleaf:*</exclude>
+              <exclude>org.thymeleaf.extras:*</exclude>
+              <exclude>org.thymeleaf.testing:*</exclude>
+              <exclude>org.thymeleaf.examples:*</exclude>
+            </excludes>
+          </dependencySet>
+        </dependencySets>
+      </binaries>
+    </moduleSet>
+
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
+      <includes>
+        <include>org.thymeleaf:*</include>
+        <include>org.thymeleaf.extras:*</include>
+      </includes>
+      <binaries>
+        <attachmentClassifier>sources</attachmentClassifier>
+        <outputDirectory>/dist</outputDirectory>
+        <unpack>false</unpack>
+        <includeDependencies>false</includeDependencies>
+      </binaries>
+    </moduleSet>
+
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
+      <includes>
+        <include>org.thymeleaf:*</include>
+        <include>org.thymeleaf.extras:*</include>
+      </includes>
+      <binaries>
+        <attachmentClassifier>javadoc</attachmentClassifier>
+        <outputDirectory>/dist</outputDirectory>
+        <unpack>false</unpack>
+        <includeDependencies>false</includeDependencies>
+      </binaries>
+    </moduleSet>
+
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
+      <includes>
+        <include>org.thymeleaf:*</include>
+        <include>org.thymeleaf.extras:*</include>
+      </includes>
+      <binaries>
+        <attachmentClassifier>javadoc</attachmentClassifier>
+        <outputDirectory>/apidocs/${module.artifactId}</outputDirectory>
+        <unpack>true</unpack>
+        <includeDependencies>false</includeDependencies>
+      </binaries>
+    </moduleSet>
+
+
+
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
+      <includes>
+        <include>org.thymeleaf.testing:*</include>
+      </includes>
+      <binaries>
+        <outputDirectory>/testing/dist</outputDirectory>
+        <unpack>false</unpack>
+        <dependencySets>
+          <dependencySet>
+            <outputDirectory>/testing/lib</outputDirectory>
+            <scope>test</scope>
+            <useProjectArtifact>false</useProjectArtifact>
+            <excludes>
+              <exclude>org.thymeleaf:*</exclude>
+              <exclude>org.thymeleaf.testing:*</exclude>
+              <exclude>org.thymeleaf.examples:*</exclude>
+            </excludes>
+          </dependencySet>
+        </dependencySets>
+      </binaries>
+    </moduleSet>
+
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
+      <includes>
+        <include>org.thymeleaf.testing:*</include>
+      </includes>
+      <binaries>
+        <attachmentClassifier>sources</attachmentClassifier>
+        <outputDirectory>/testing/dist</outputDirectory>
+        <unpack>false</unpack>
+        <includeDependencies>false</includeDependencies>
+      </binaries>
+    </moduleSet>
+
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
+      <includes>
+        <include>org.thymeleaf.testing:*</include>
+      </includes>
+      <binaries>
+        <attachmentClassifier>javadoc</attachmentClassifier>
+        <outputDirectory>/testing/dist</outputDirectory>
+        <unpack>false</unpack>
+        <includeDependencies>false</includeDependencies>
+      </binaries>
+    </moduleSet>
+
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
+      <includes>
+        <include>org.thymeleaf.testing:*</include>
+      </includes>
+      <binaries>
+        <attachmentClassifier>javadoc</attachmentClassifier>
+        <outputDirectory>/testing/apidocs/${module.artifactId}</outputDirectory>
+        <unpack>true</unpack>
+        <includeDependencies>false</includeDependencies>
+      </binaries>
+    </moduleSet>
+
+
+
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
+      <includes>
+        <include>org.thymeleaf.examples:*</include>
+      </includes>
+      <binaries>
+        <outputDirectory>/examples/binaries</outputDirectory>
+        <unpack>false</unpack>
+        <includeDependencies>false</includeDependencies>
+      </binaries>
+    </moduleSet>
+
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
+      <includes>
+        <include>org.thymeleaf.examples:thymeleaf-examples</include>
+      </includes>
+      <sources>
+        <excludeSubModuleDirectories>false</excludeSubModuleDirectories>
+        <outputDirectoryMapping>/examples/sources</outputDirectoryMapping>
+        <fileSets>
+          <fileSet>
+            <excludes>
+              <!-- Source code files will be included in a fileset that sets unix line feeds -->
+              <exclude>**/*.java</exclude>
+              <exclude>**/*.html</exclude>
+              <exclude>**/*.xml</exclude>
+              <exclude>**/*.css</exclude>
+              <exclude>**/*.properties</exclude>
+              <exclude>**/*.yaml</exclude>
+              <exclude>**/*.yml</exclude>
+              <exclude>**/*.markdown</exclude>
+              <exclude>**/*.md</exclude>
+              <exclude>**/*.txt</exclude>
+              <!-- Exclude typical project binary artifacts and IDE metadata -->
+              <exclude>**/target/</exclude>
+              <exclude>**/*.iml</exclude>
+              <exclude>**/.idea/</exclude>
+              <exclude>**/.settings/</exclude>
+              <exclude>**/bin/</exclude>
+              <exclude>**/.*</exclude>
+            </excludes>
+          </fileSet>
+          <fileSet>
+            <includes>
+              <include>**/*.java</include>
+              <include>**/*.html</include>
+              <include>**/*.xml</include>
+              <include>**/*.css</include>
+              <include>**/*.properties</include>
+              <include>**/*.yaml</include>
+              <include>**/*.yml</include>
+              <include>**/*.markdown</include>
+              <include>**/*.md</include>
+              <include>**/*.txt</include>
+            </includes>
+            <lineEnding>unix</lineEnding>
+          </fileSet>
+        </fileSets>
+      </sources>
+    </moduleSet>
+
+  </moduleSets>
+
+
+
+
+  <fileSets>
+    <fileSet>
+      <directory>${project.basedir}/..</directory>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>LICENSE.txt</include>
+        <include>NOTICE.txt</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+
+</assembly>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ =============================================================================
+  ~
+  ~   Copyright (c) 2011-2025 Thymeleaf (http://www.thymeleaf.org)
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   you may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~       http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  ~ =============================================================================
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.thymeleaf</groupId>
+    <artifactId>thymeleaf-parent</artifactId>
+    <version>3.1.4-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>thymeleaf-dist</artifactId>
+  <packaging>pom</packaging>
+  <name>thymeleaf distribution</name>
+
+  <properties>
+    <artifact.deploy.disabled>true</artifact.deploy.disabled>
+  </properties>
+
+  <build>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>make-assembly-dist</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>${project.basedir}/src/assembly/dist.xml</descriptor>
+              </descriptors>
+              <appendAssemblyId>true</appendAssemblyId>
+              <finalName>thymeleaf-${project.version}</finalName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+    
+  </build>
+
+  <dependencies>
+
+    <!--
+      ~ These dependencies should not be needed here, but
+      ~ the Maven Assembly Plugin is unable to use dependencies
+      ~ from the reactor execution when deployinh due to
+      ~ MASSEMBLY-907, and instead it needs these modules to
+      ~ be dependencies too.
+      ~
+      ~ See https://issues.apache.org/jira/projects/MASSEMBLY/issues/MASSEMBLY-907
+      -->
+
+    <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf-spring5</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf-spring6</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.thymeleaf.testing</groupId>
+      <artifactId>thymeleaf-testing</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.thymeleaf.testing</groupId>
+      <artifactId>thymeleaf-testing-spring5</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.thymeleaf.testing</groupId>
+      <artifactId>thymeleaf-testing-spring6</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.thymeleaf.examples</groupId>
+      <artifactId>thymeleaf-examples</artifactId>
+      <type>pom</type>
+    </dependency>
+
+  </dependencies>
+
+</project>
