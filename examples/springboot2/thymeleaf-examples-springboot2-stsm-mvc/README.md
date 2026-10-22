@@ -21,8 +21,8 @@ mvn spring-boot:run
 
 http://127.0.0.1:8080/
 
-![doc/screen1.png](https://github.com/cherepakhin/thymeleaf_examples/tree/main/examples/springboot2/thymeleaf-examples-springboot2-stsm-mvc/doc/screen1.png)
-![doc/screen2.png](https://github.com/cherepakhin/thymeleaf_examples/tree/main/examples/springboot2/thymeleaf-examples-springboot2-stsm-mvc/doc/screen2.png)
+![screen1.png](https://github.com/cherepakhin/thymeleaf_examples/blob/main/examples/springboot2/thymeleaf-examples-springboot2-stsm-mvc/doc/screen1.png)
+![screen2.png](https://github.com/cherepakhin/thymeleaf_examples/blob/main/examples/springboot2/thymeleaf-examples-springboot2-stsm-mvc/doc/screen2.png)
 
 __Cell in screen2 contains 2 rows__.
 
